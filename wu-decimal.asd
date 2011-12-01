@@ -33,6 +33,10 @@
 
 (defsystem :wu-decimal
     :name "wu-decimal"
-    :version "1.0"
+    :description "Arbitrary-precision decimal arithmetic"
+    :long-description "Wu-Decimal enables convenient, arbitrary-precision decimal arithmetic through a reader macro, #$, and an update to the pprint dispatch table. Wu-Decimal uses the CL ratio type to store decimals, which enables numeric functions such as +, -, etc. to operate on decimal numbers in a natural way."
+    :version "1.0.1"
+    :author "Wukix Inc <engineering@wukix.com>"
+    :license "FreeBSD"
     :components ((:file "wu-decimal")))
 

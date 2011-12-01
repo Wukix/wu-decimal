@@ -135,6 +135,9 @@
 	(setf integer (/ integer 10)))))
 
 (defun decimal->string (decimal)
+  (when (and (typep decimal 'ratio) 
+	     (not (typep decimal 'decimal))) 
+    (error "Argument ~a is not a decimal." decimal))
   (let* ((denominator (denominator decimal))
 	 (new-denominator 
 	  (do ((d (expt 10 (ceiling (log denominator 10)))
