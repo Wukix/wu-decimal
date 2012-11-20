@@ -1,0 +1,4 @@
+(module
+ (:fullname "/wu-decimal"
+  :depends-on ("wu-decimal")
+  :supersedes-asdf ("wu-decimal")))
