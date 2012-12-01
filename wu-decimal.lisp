@@ -69,7 +69,7 @@
     (setf numbr (/ numbr 5))))
 
 (defun is-power-of-2 (number)
-  ;; Note 1: It is intentional that 1 (i.e. 2^0) returns T.
+  ;; Note: It is intentional that 1 (i.e. 2^0) returns T.
   (assert (plusp number))
   (zerop (logand number (1- number))))
 
