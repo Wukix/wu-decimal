@@ -71,9 +71,7 @@
 (defun is-power-of-2 (number)
   ;; Note 1: It is intentional that 1 (i.e. 2^0) returns T.
   (assert (plusp number))
-  (and
-   (zerop (logand number (1- number)))
-   (/= number 0 -1)))
+  (zerop (logand number (1- number))))
 
 (defun enable-decimal-printing-for-ratios ()
   (set-pprint-dispatch 
@@ -295,6 +293,8 @@ Example: (parse-decimal \"1,205.42\" :group-separator #\\,) => 60271/50, 8"
 	(setf integer (/ integer 10)))))
 
 (defun find-multiplier (d)
+  "Given an integer, d, of the form 2^m*5^n, compute c such that c*d = c*(2^m*5^n) = 10^max(m,n).
+Returns c and max(m,n). See http://wukix.com/lisp-decimals#theory for background."
   (let (2^m 5^n	m n)
     (setf 2^m (ash (1+ (logxor d (1- d))) -1))
     (setf 5^n (/ d 2^m))
