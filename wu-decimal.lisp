@@ -300,6 +300,11 @@ Returns c and max(m,n). See http://wukix.com/lisp-decimals#theory for background
     (setf 5^n (/ d 2^m))
     (setf m (1- (integer-length 2^m)))
     (setf n (round (log 5^n 5)))
+    ;; Log and integer-length seem to work perfectly as used above even for
+    ;; extremely large numbers on SBCL. However, in case of any incorrectness
+    ;; due to precision, portability issues, etc., we check that the answer is
+    ;; fully correct before returning it to the caller.
+    (assert (= d (* (expt 2 m) (expt 5 n))))
     (if (> m n)
 	(values (expt 5 (- m n)) m)
 	(values (expt 2 (- n m)) n))))
