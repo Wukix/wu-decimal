@@ -1,6 +1,6 @@
 ;;; -*- mode:lisp;coding:utf-8 -*-
 ;;;
-;;; Copyright (C) 2011 Wukix, Inc. (http://wukix.com)
+;;; Copyright (C) 2011-2012 Wukix, Inc. (http://wukix.com)
 ;;;
 ;;; Redistribution and use in source and binary forms, with or without
 ;;; modification, are permitted provided that the following conditions are met:
@@ -35,7 +35,7 @@
     :name "wu-decimal"
     :description "Arbitrary-precision decimal arithmetic"
     :long-description "Wu-Decimal enables convenient, arbitrary-precision decimal arithmetic through a reader macro, #$, and an update to the pprint dispatch table. Wu-Decimal uses the CL ratio type to store decimals, which enables numeric functions such as +, -, etc. to operate on decimal numbers in a natural way."
-    :version "1.0.1"
+    :version "2.0.0"
     :author "Wukix Inc <engineering@wukix.com>"
     :license "FreeBSD"
     :components ((:file "wu-decimal")))
